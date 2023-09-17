@@ -30,7 +30,7 @@ const TextField: React.FC<TextFieldProps> = ({
   const inputType = type === 'password' && isPasswordVisible ? 'text' : type;
 
   return (
-    <div className="mb-4">
+    <div>
       {label && (
         <label className="block text-primary-gray-300 font-light mb-1">
           {label}

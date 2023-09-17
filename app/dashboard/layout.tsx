@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { CURRENT_TAB, listMenu } from './constant';
+import Sidebar from '@/src/components/molecules/Sidebar';
+import TextField from '@/src/components/atoms/TextField';
 
 export default function DashboardLayout() {
   const [currentTab] = useState(CURRENT_TAB);
@@ -10,38 +12,24 @@ export default function DashboardLayout() {
     <div className="">
       <div className="grid grid-cols-4 h-screen">
         <div className="col-span-1">
-          <div className="h-full bg-white">
-            <h1 className="text-center mt-14 text-[42px] font-semibold">
-              Task.
-              <span className="text-primary-orange-100">IO</span>
-            </h1>
-
-            <div className="px-16 mt-16">
-              {listMenu.map((item, index) => {
-                const isActive = item.title === currentTab;
-
-                const styleActive = isActive
-                  ? 'bg-primary-orange-50 text-primary-orange-100 font-semibold'
-                  : 'cursor-not-allowed';
-
-                const menuStyle = [
-                  'pl-4 mb-6 cursor-pointer flex items-center text-primary-gray-300 py-4',
-                  styleActive
-                ].join(' ');
-
-                return (
-                  <div key={index} className={menuStyle}>
-                    {item.icon}
-                    <p className="ml-4">{item.title}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <Sidebar list={listMenu} tab={currentTab} />
         </div>
         <div className="col-span-3 bg-primary-gray-200 rounded-s-3xl rounded-b-3xl">
           <div className="container p-4">
-            <div className="bg-primary-white">Header</div>
+            <div className="bg-primary-white rounded-md px-4 py-3 flex justify-between items-center">
+              <TextField placeholder="Cari Project...." />
+
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary-gray-300 text-primary-white">
+                  DK
+                </div>
+
+                <div className="ml-3 mr-8">
+                  <p className="text-primary-gray-400 text-xs">Workspace</p>
+                  <p className="font-semibold">Diko Mahendra</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

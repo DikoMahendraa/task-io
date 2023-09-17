@@ -9,7 +9,7 @@ import {
 
 export const CURRENT_TAB = 'To-Do';
 
-interface ListMenu {
+export interface ListMenu {
   title: string;
   icon: React.ReactNode;
   path: string;
