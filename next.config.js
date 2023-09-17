@@ -9,6 +9,37 @@ const nextConfig = {
     });
 
     return config;
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/dashboard',
+        permanent: true
+      },
+      {
+        source: '/auth/register',
+        destination: '/register',
+        permanent: true
+      },
+      {
+        source: '/auth/login',
+        destination: '/login',
+        permanent: true
+      }
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/login',
+        destination: '/auth/login'
+      },
+      {
+        source: '/register',
+        destination: '/auth/register'
+      }
+    ];
   }
 };
 
