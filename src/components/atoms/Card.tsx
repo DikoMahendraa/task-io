@@ -11,6 +11,7 @@ interface CardProps {
   date: string;
   isEmpty: boolean;
   actButton: boolean;
+  onCreateTask: () => void;
 }
 
 const Card: React.FC<Partial<CardProps>> = ({
@@ -20,16 +21,22 @@ const Card: React.FC<Partial<CardProps>> = ({
   categories = [],
   date,
   isEmpty = false,
-  actButton = false
+  actButton = false,
+  onCreateTask
 }) => {
   if (isEmpty) {
     return (
-      <div className="bg-white rounded-lg shadow-md py-16 w-full px-10 max-w-lg max-h-[12rem] overflow-hidden">
-        <p className="italic text-center text-primary-gray-300 mb-4">{title}</p>
+      <div className="bg-white rounded-lg shadow-md w-full h-[10rem] flex flex-col items-center pt-10">
+        <p className="italic text-center font-light text-primary-gray-300 mb-4 px-[6rem]">
+          {title}
+        </p>
 
         {actButton && (
           <div className="flex justify-center">
-            <div className="flex items-center justify-center max-w-[2rem] cursor-pointer">
+            <div
+              onClick={onCreateTask}
+              className="flex items-center justify-center max-w-[2rem] cursor-pointer"
+            >
               <ICAdd />
             </div>
           </div>

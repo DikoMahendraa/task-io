@@ -13,7 +13,7 @@ export default function DashboardLayout({
   const [currentTab] = useState(CURRENT_TAB);
 
   return (
-    <div className="">
+    <div className="relative">
       <div className="grid grid-cols-4 h-screen">
         <div className="col-span-1 sticky">
           <Sidebar list={listMenu} tab={currentTab} />

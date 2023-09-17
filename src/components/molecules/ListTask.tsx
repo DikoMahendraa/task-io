@@ -1,8 +1,11 @@
 import React from 'react';
-
 import Card from '@/src/components/atoms/Card';
 
-export default function ListTask() {
+interface ListTaskProps {
+  onCreateTask: () => void;
+}
+
+const ListTask: React.FC<ListTaskProps> = ({ onCreateTask }) => {
   const data1: any[] = [];
   const data2: any[] = [];
   const data3: any[] = [];
@@ -25,6 +28,7 @@ export default function ListTask() {
           <Card
             isEmpty={true}
             actButton
+            onCreateTask={onCreateTask}
             title="There are no assignments available yet"
           />
         )}
@@ -63,4 +67,6 @@ export default function ListTask() {
       </div>
     </div>
   );
-}
+};
+
+export default ListTask;
