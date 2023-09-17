@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CURRENT_TAB, listMenu } from './constant';
+
+import { CURRENT_TAB, listMenu } from '@/app/dashboard/constant';
 import Sidebar from '@/src/components/molecules/Sidebar';
-import TextField from '@/src/components/atoms/TextField';
+import Header from '@/src/components/molecules/Header';
+import EmptyProject from '@/src/components/organizes/EmptyProject';
 
 export default function DashboardLayout() {
   const [currentTab] = useState(CURRENT_TAB);
@@ -16,20 +18,9 @@ export default function DashboardLayout() {
         </div>
         <div className="col-span-3 bg-primary-gray-200 rounded-s-3xl rounded-b-3xl">
           <div className="container p-4">
-            <div className="bg-primary-white rounded-md px-4 py-3 flex justify-between items-center">
-              <TextField placeholder="Cari Project...." />
+            <Header />
 
-              <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary-gray-300 text-primary-white">
-                  DK
-                </div>
-
-                <div className="ml-3 mr-8">
-                  <p className="text-primary-gray-400 text-xs">Workspace</p>
-                  <p className="font-semibold">Diko Mahendra</p>
-                </div>
-              </div>
-            </div>
+            <EmptyProject />
           </div>
         </div>
       </div>
