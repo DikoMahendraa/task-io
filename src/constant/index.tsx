@@ -19,31 +19,31 @@ export const listMenu: Array<ListMenu> = [
   {
     title: 'Dashboard',
     icon: <ICDashboard />,
-    path: ''
+    path: '/dashboard'
   },
   {
     title: 'Analytics',
     icon: <ICPie />,
-    path: ''
+    path: '/dashboard/analytics'
   },
   {
     title: 'History',
     icon: <ICOrder />,
-    path: ''
+    path: '/dashboard/history'
   },
   {
     title: 'To-Do',
     icon: <ICPaper />,
-    path: ''
+    path: '/dashboard/todo'
   },
   {
     title: 'Report',
     icon: <ICPrint />,
-    path: ''
+    path: '/dashboard/report'
   },
   {
     title: 'Settings',
     icon: <ICSettings />,
-    path: ''
+    path: '/dashboard/settings'
   }
 ];

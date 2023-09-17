@@ -1,4 +1,5 @@
-import { ListMenu } from '@/app/dashboard/constant';
+import { ListMenu } from '@/src/constant';
+import Link from 'next/link';
 import React from 'react';
 
 type PropsSidebar = {
@@ -28,10 +29,12 @@ const Sidebar: React.FC<PropsSidebar> = ({ list, tab }) => {
           ].join(' ');
 
           return (
-            <div key={index} className={menuStyle}>
-              {item.icon}
-              <p className="ml-4">{item.title}</p>
-            </div>
+            <Link key={index} href={item.path}>
+              <div className={menuStyle}>
+                {item.icon}
+                <p className="ml-4">{item.title}</p>
+              </div>
+            </Link>
           );
         })}
       </div>
