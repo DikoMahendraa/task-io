@@ -6,11 +6,12 @@ const colors = {
   ...tailwind.colors,
   ...{
     primary: {
+      'gray-light': '#FAFAFA',
       'gray-50': '#EAEAEA',
       'gray-100': '#F8F8F8',
       'gray-300': '#787878',
-      'gray-200': '#858585',
-      'gray-400': '#F2F0EE',
+      'gray-200': '#F2F0EE',
+      'gray-400': '#858585',
       white: '#FFFFFF',
       'orange-50': '#FFF2EC',
       'orange-100': '#FF7940',

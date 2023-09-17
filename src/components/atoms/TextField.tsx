@@ -43,7 +43,7 @@ const TextField: React.FC<TextFieldProps> = ({
           </span>
         )}
         <input
-          className={`w-full px-3 py-3 text-sm rounded-md border focus:outline-none focus:border-primary-orange-100 ${
+          className={`w-full px-3 py-3 text-sm rounded-md border bg-primary-gray-light focus:outline-none focus:border-primary-orange-100 ${
             variant === 'suffix' ? 'pl-3 pr-10' : ''
           }`}
           type={inputType}
