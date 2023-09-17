@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -17,17 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='relative h-screen'>
-      <header className='flex items-center space-x-2 py-4 bg-blue-50 justify-center'>
-        <p className='text-md'><Link href="/">Home</Link></p>
-        <p className='text-md'><Link href="/dashboard">Dashboard</Link></p>
-        <p className='text-md'><Link href="/settings">Settings</Link></p>
-      </header>
-
       {children}
-      
-      <footer className='absolute bottom-0 py-4 bg-blue-300 w-full'>
-        <p className='text-center'>made with love</p>
-      </footer>
       </body>
     </html>
   )
