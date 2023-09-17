@@ -4,7 +4,9 @@ import TextField from '@/src/components/atoms/TextField';
 export default function Header() {
   return (
     <div className="bg-primary-white rounded-md px-4 py-3 flex justify-between items-center">
-      <TextField placeholder="Cari Project...." />
+      <div className=" w-1/4">
+        <TextField placeholder="Cari Project...." />
+      </div>
 
       <div className="flex items-center">
         <div className="w-10 h-10 rounded-full flex items-center justify-center bg-primary-gray-300 text-primary-white">
