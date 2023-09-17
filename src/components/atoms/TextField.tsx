@@ -7,7 +7,7 @@ interface TextFieldProps {
   prefix?: string | React.ReactNode;
   suffix?: string | React.ReactNode;
   type?: 'text' | 'password';
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: () => void;
   value?: string;
 }
 
@@ -68,7 +68,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                  ></svg>
+                  />
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                  ></svg>
+                  />
                 )}
               </span>
             )}
