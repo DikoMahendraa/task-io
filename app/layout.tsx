@@ -10,7 +10,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={fontOptimization}>
-      <body className="relative h-screen font-light">{children}</body>
+      <body className="h-screen">{children}</body>
     </html>
   );
 }

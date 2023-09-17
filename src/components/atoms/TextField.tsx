@@ -31,7 +31,11 @@ const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <div className="mb-4">
-      {label && <label className="block text-gray-700">{label}</label>}
+      {label && (
+        <label className="block text-primary-gray-300 font-light mb-1">
+          {label}
+        </label>
+      )}
       <div className={`relative ${variant === 'prefix' ? 'flex' : ''}`}>
         {variant === 'prefix' && (
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -39,7 +43,7 @@ const TextField: React.FC<TextFieldProps> = ({
           </span>
         )}
         <input
-          className={`w-full px-3 py-2 rounded-md border focus:outline-none focus:ring focus:border-blue-300 ${
+          className={`w-full px-3 py-3 text-sm rounded-md border focus:outline-none focus:border-primary-orange-100 ${
             variant === 'suffix' ? 'pl-3 pr-10' : ''
           }`}
           type={inputType}
@@ -64,9 +68,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                  >
-                    {/* ... The eye icon when password is visible */}
-                  </svg>
+                  ></svg>
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,9 +76,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                  >
-                    {/* ... The eye-slash icon when password is hidden */}
-                  </svg>
+                  ></svg>
                 )}
               </span>
             )}
