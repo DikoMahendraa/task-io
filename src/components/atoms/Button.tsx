@@ -24,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({
 
     switch (typeOfBtn) {
       case 'outline-orange':
-        return 'border text-primary-orange-100 hover:bg-primary-orange-100 hover:text-primary-orange-50 border-primary-orange-100';
+        return `bg-white border text-primary-orange-100 hover:bg-primary-orange-100 hover:text-primary-orange-50 border-primary-orange-100`;
       case 'default-orange':
         return 'bg-primary-orange-50 text-primary-orange-100 hover:bg-primary-orange-100 hover:text-primary-orange-50';
       case 'outline-gray':

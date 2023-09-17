@@ -1,3 +1,4 @@
+import { ICCalender } from '@/src/assets/svg';
 import Image from 'next/image';
 import React from 'react';
 
@@ -18,17 +19,25 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-4 w-full max-w-lg">
-      <h2 className="text-2xl font-semibold">{title}</h2>
+      <h2 className="text-md font-semibold">{title}</h2>
       {image && (
-        <Image src={image} alt={title} className="mt-2 w-full h-auto" />
+        <div className="relative w-full h-[10rem] mt-4 rounded-md overflow-hidden">
+          <Image
+            priority
+            src={image}
+            alt={`alt-${title}`}
+            objectFit="contain"
+            fill={true}
+          />
+        </div>
       )}
-      <p className="mt-2">{description}</p>
+      <p className="mt-2 text-sm text-primary-gray-300">{description}</p>
       {categories.length > 0 && (
         <div className="mt-2">
           {categories.map(category => (
             <span
               key={category}
-              className="inline-block bg-gray-200 text-gray-700 rounded-full px-2 py-1 text-sm mr-2"
+              className="inline-block bg-gray-200 text-gray-700 rounded-full px-2 py-1 text-xs mr-2 capitalize"
             >
               {category}
             </span>
@@ -36,17 +45,9 @@ const Card: React.FC<CardProps> = ({
         </div>
       )}
       <hr className="my-2" />
-      <div className="flex items-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-gray-500 mr-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          {/* ... Calendar icon */}
-        </svg>
-        <span className="text-gray-500 text-sm">{date}</span>
+      <div className="flex items-center justify-end capitalize">
+        <ICCalender />
+        <p className="text-gray-500 text-sm ml-2">{date}</p>
       </div>
     </div>
   );

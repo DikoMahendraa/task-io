@@ -6,7 +6,7 @@ interface TextFieldProps {
   variant?: 'default' | 'prefix' | 'suffix';
   prefix?: string | React.ReactNode;
   suffix?: string | React.ReactNode;
-  type?: 'text' | 'password';
+  type?: 'text' | 'password' | 'date';
   onChange?: () => void;
   value?: string;
 }
