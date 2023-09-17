@@ -4,7 +4,7 @@ import Link from 'next/link';
 interface ButtonProps {
   variant?: 'default' | 'outline' | 'transparent';
   size?: 'default' | 'large';
-  color?: 'default' | 'gray' | 'orange';
+  color?: string;
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
