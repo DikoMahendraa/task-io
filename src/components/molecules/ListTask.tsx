@@ -3,22 +3,23 @@ import Card from '@/src/components/atoms/Card';
 
 interface ListTaskProps {
   onCreateTask: () => void;
+  data: {
+    todo: Array<any>;
+    inProgress: Array<any>;
+    done: Array<any>;
+  };
 }
 
-const ListTask: React.FC<ListTaskProps> = ({ onCreateTask }) => {
-  const data1: any[] = [];
-  const data2: any[] = [];
-  const data3: any[] = [];
-
+const ListTask: React.FC<ListTaskProps> = ({ onCreateTask, data }) => {
   return (
     <div className="grid grid-cols-3 mt-8 space-x-6">
       <div className="col-span-1 overflow-y-auto max-h-screen space-y-6">
-        {data1.length > 1 ? (
-          data1.map(item => (
+        {data.todo.length > 1 ? (
+          data.todo.map((item, index) => (
             <Card
               date="12 jan 2023"
               title="[FE] - Adjustment Layout - Homepage"
-              image="/images/img-dummy-task.png"
+              {...(index % 3 === 0 && { image: '/images/img-dummy-task.png' })}
               description="Fixing bug on layout, when user clicked or scroll layout from main page."
               categories={['published', 'UI Layout']}
               key={item}
@@ -34,12 +35,12 @@ const ListTask: React.FC<ListTaskProps> = ({ onCreateTask }) => {
         )}
       </div>
       <div className="col-span-1 overflow-y-auto max-h-screen space-y-6">
-        {data2.length > 1 ? (
-          data2.map(item => (
+        {data.inProgress.length > 1 ? (
+          data.inProgress.map((item, index) => (
             <Card
               date="12 jan 2023"
               title="[FE] - Adjustment Layout - Homepage"
-              image="/images/img-dummy-task.png"
+              {...(index % 1 === 0 && { image: '/images/img-dummy-task.png' })}
               description="Fixing bug on layout, when user clicked or scroll layout from main page."
               categories={['published', 'UI Layout']}
               key={item}
@@ -50,12 +51,12 @@ const ListTask: React.FC<ListTaskProps> = ({ onCreateTask }) => {
         )}
       </div>
       <div className="col-span-1 overflow-y-auto max-h-screen space-y-6">
-        {data3.length > 1 ? (
-          data3.map(item => (
+        {data.done.length > 1 ? (
+          data.done.map((item, index) => (
             <Card
               date="12 jan 2023"
               title="[FE] - Adjustment Layout - Homepage"
-              image="/images/img-dummy-task.png"
+              {...(index % 2 === 0 && { image: '/images/img-dummy-task.png' })}
               description="Fixing bug on layout, when user clicked or scroll layout from main page."
               categories={['published', 'UI Layout']}
               key={item}
