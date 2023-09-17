@@ -40,6 +40,10 @@ module.exports = {
 
         'black-100': '#000000'
       }
+    },
+    fontFamily: {
+      inter: ['var(--font-inter)'],
+      roboto: ['var(--font-roboto-mono']
     }
   },
   plugins: []
