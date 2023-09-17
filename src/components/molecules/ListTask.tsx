@@ -3,53 +3,63 @@ import React from 'react';
 import Card from '@/src/components/atoms/Card';
 
 export default function ListTask() {
+  const data1: any[] = [];
+  const data2: any[] = [];
+  const data3: any[] = [];
+
   return (
     <div className="grid grid-cols-3 mt-8 space-x-6">
       <div className="col-span-1 overflow-y-auto max-h-screen space-y-6">
-        <Card
-          date="12 jan 2023"
-          title="[FE] - Adjustment Layout - Homepage"
-          image="/images/img-dummy-task.png"
-          description="Fixing bug on layout, when user clicked or scroll layout from main page."
-          categories={['published', 'UI Layout']}
-        />
-        <Card
-          date="12 jan 2023"
-          title="[FE] - Adjustment Layout - Homepage"
-          image="/images/img-dummy-task.png"
-          description="Fixing bug on layout, when user clicked or scroll layout from main page."
-          categories={['published', 'UI Layout']}
-        />
-        <Card
-          date="12 jan 2023"
-          title="[FE] - Adjustment Layout - Homepage"
-          image="/images/img-dummy-task.png"
-          description="Fixing bug on layout, when user clicked or scroll layout from main page."
-          categories={['published', 'UI Layout']}
-        />
-        <Card
-          date="12 jan 2023"
-          title="[FE] - Adjustment Layout - Homepage"
-          image="/images/img-dummy-task.png"
-          description="Fixing bug on layout, when user clicked or scroll layout from main page."
-          categories={['published', 'UI Layout']}
-        />
+        {data1.length > 1 ? (
+          data1.map(item => (
+            <Card
+              date="12 jan 2023"
+              title="[FE] - Adjustment Layout - Homepage"
+              image="/images/img-dummy-task.png"
+              description="Fixing bug on layout, when user clicked or scroll layout from main page."
+              categories={['published', 'UI Layout']}
+              key={item}
+            />
+          ))
+        ) : (
+          <Card
+            isEmpty={true}
+            actButton
+            title="There are no assignments available yet"
+          />
+        )}
       </div>
       <div className="col-span-1 overflow-y-auto max-h-screen space-y-6">
-        <Card
-          date="12 jan 2023"
-          title="[FE] - Adjustment Layout - Homepage"
-          description="Fixing bug on layout, when user clicked or scroll layout from main page."
-          categories={['published', 'UI Layout']}
-        />
+        {data2.length > 1 ? (
+          data2.map(item => (
+            <Card
+              date="12 jan 2023"
+              title="[FE] - Adjustment Layout - Homepage"
+              image="/images/img-dummy-task.png"
+              description="Fixing bug on layout, when user clicked or scroll layout from main page."
+              categories={['published', 'UI Layout']}
+              key={item}
+            />
+          ))
+        ) : (
+          <Card isEmpty={true} title="There are no assignments available yet" />
+        )}
       </div>
       <div className="col-span-1 overflow-y-auto max-h-screen space-y-6">
-        <Card
-          date="12 jan 2023"
-          title="[FE] - Adjustment Layout - Homepage"
-          description="Fixing bug on layout, when user clicked or scroll layout from main page."
-          categories={['published', 'UI Layout']}
-        />
+        {data3.length > 1 ? (
+          data3.map(item => (
+            <Card
+              date="12 jan 2023"
+              title="[FE] - Adjustment Layout - Homepage"
+              image="/images/img-dummy-task.png"
+              description="Fixing bug on layout, when user clicked or scroll layout from main page."
+              categories={['published', 'UI Layout']}
+              key={item}
+            />
+          ))
+        ) : (
+          <Card isEmpty={true} title="There are no assignments available yet" />
+        )}
       </div>
     </div>
   );

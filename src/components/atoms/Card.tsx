@@ -1,22 +1,43 @@
-import { ICCalender } from '@/src/assets/svg';
 import Image from 'next/image';
 import React from 'react';
+
+import { ICAdd, ICCalender } from '@/src/assets/svg';
 
 interface CardProps {
   title: string;
   description: string;
-  image?: string;
+  image: string;
   categories: string[];
   date: string;
+  isEmpty: boolean;
+  actButton: boolean;
 }
 
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<Partial<CardProps>> = ({
   title,
   description,
   image,
-  categories,
-  date
+  categories = [],
+  date,
+  isEmpty = false,
+  actButton = false
 }) => {
+  if (isEmpty) {
+    return (
+      <div className="bg-white rounded-lg shadow-md py-16 w-full px-10 max-w-lg max-h-[12rem] overflow-hidden">
+        <p className="italic text-center text-primary-gray-300 mb-4">{title}</p>
+
+        {actButton && (
+          <div className="flex justify-center">
+            <div className="flex items-center justify-center max-w-[2rem] cursor-pointer">
+              <ICAdd />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white rounded-lg shadow-md p-4 w-full max-w-lg">
       <h2 className="text-md font-semibold">{title}</h2>
