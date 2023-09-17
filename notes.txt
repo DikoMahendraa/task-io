@@ -1,0 +1,2 @@
+svg-one-line=https://blog.logrocket.com/import-svgs-next-js-apps/
+bun=https://bun.sh/docs
