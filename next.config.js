@@ -40,6 +40,14 @@ const nextConfig = {
         destination: '/auth/register'
       }
     ];
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.dog.ceo'
+      }
+    ]
   }
 };
 

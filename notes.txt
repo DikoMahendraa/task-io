@@ -1,2 +1,5 @@
 svg-one-line=https://blog.logrocket.com/import-svgs-next-js-apps/
 bun=https://bun.sh/docs
+images=https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns
+rewrites=https://nextjs.org/docs/pages/api-reference/next-config-js/rewrites
+redirects=https://nextjs.org/docs/pages/api-reference/next-config-js/redirects
