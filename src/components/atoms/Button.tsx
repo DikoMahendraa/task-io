@@ -8,12 +8,14 @@ interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
+  type?: 'submit' | 'button' | 'reset';
 }
 const Button: React.FC<ButtonProps> = ({
   variant = 'default',
   size = 'default',
   color = 'default',
   children,
+  type = 'button',
   onClick,
   href = ''
 }) => {
@@ -49,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
       </button>
     </Link>
   ) : (
-    <button className={classNames} onClick={onClick}>
+    <button type={type} className={classNames} onClick={onClick}>
       {children}
     </button>
   );

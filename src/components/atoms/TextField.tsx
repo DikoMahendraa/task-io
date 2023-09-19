@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
 interface TextFieldProps {
-  label?: string;
   placeholder: string;
-  variant?: 'default' | 'prefix' | 'suffix';
+  label?: string;
+  value?: string;
   prefix?: string | React.ReactNode;
   suffix?: string | React.ReactNode;
+  variant?: 'default' | 'prefix' | 'suffix';
   type?: 'text' | 'password' | 'date';
-  onChange?: () => void;
-  value?: string;
+  register: any;
+  error?: string;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -18,8 +19,9 @@ const TextField: React.FC<TextFieldProps> = ({
   prefix,
   suffix,
   type = 'text',
-  onChange,
-  value
+  value,
+  register,
+  error
 }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -28,6 +30,10 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   const inputType = type === 'password' && isPasswordVisible ? 'text' : type;
+
+  const isError = !!error
+    ? 'focus:border-red-500'
+    : 'focus:border-primary-orange-100';
 
   return (
     <div>
@@ -43,14 +49,15 @@ const TextField: React.FC<TextFieldProps> = ({
           </span>
         )}
         <input
-          className={`w-full px-3 py-3 text-sm rounded-md border bg-primary-gray-light focus:outline-none focus:border-primary-orange-100 ${
+          className={`w-full px-3 py-3 text-sm rounded-md border bg-primary-gray-light focus:outline-none ${isError}  ${
             variant === 'suffix' ? 'pl-3 pr-10' : ''
           }`}
           type={inputType}
           placeholder={placeholder}
-          onChange={onChange}
           value={value}
+          {...register}
         />
+        {error && <span className="text-xs text-red-500">{error}</span>}
         {variant === 'suffix' && (
           <>
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-gray-400">
