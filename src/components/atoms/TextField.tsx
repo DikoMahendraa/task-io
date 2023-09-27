@@ -8,7 +8,7 @@ interface TextFieldProps {
   suffix?: string | React.ReactNode;
   variant?: 'default' | 'prefix' | 'suffix';
   type?: 'text' | 'password' | 'date' | 'email';
-  register: any;
+  register?: any;
   error?: string;
 }
 
@@ -57,7 +57,7 @@ const TextField: React.FC<TextFieldProps> = ({
           value={value}
           {...register}
         />
-        {error && <span className="text-xs text-red-500">{error}</span>}
+        {!!error && <span className="text-xs text-red-500">{error}</span>}
         {variant === 'suffix' && (
           <>
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-gray-400">
