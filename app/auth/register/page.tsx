@@ -64,9 +64,15 @@ export default function AuthRegister() {
             label="Username"
             placeholder="Ex. Coco Mahendr4"
             register={{
-              ...register('username', { required: 'username is required' })
+              ...register('username', {
+                required: 'username is required',
+                maxLength: {
+                  value: 16,
+                  message: 'max 16 characters'
+                }
+              })
             }}
-            error={errors.username?.message as string}
+            error={errors.username?.message}
           />
           <TextField
             label="Email"

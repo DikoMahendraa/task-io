@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Image from 'next/image';
 
 import Button from '@/src/components/atoms/Button';
 
-export default function EmptyProject() {
+function EmptyProject({ onClick }: { onClick: () => void }) {
   return (
     <div className="mt-[4rem] flex flex-col justify-center items-center">
       <Image
@@ -18,10 +18,12 @@ export default function EmptyProject() {
           Ups, nothing project available, <br /> create new project ?
         </p>
 
-        <Button color="orange" variant="outline">
+        <Button onClick={onClick} color="orange" variant="outline">
           Create Project
         </Button>
       </div>
     </div>
   );
 }
+
+export default memo(EmptyProject);
