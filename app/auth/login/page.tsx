@@ -59,6 +59,7 @@ export default function AuthLogin() {
       <form onSubmit={handleSubmit(onSignIn)}>
         <div className="flex flex-col space-y-4">
           <TextField
+            type="email"
             label="Email"
             placeholder="Ex. example@mail.com"
             register={{

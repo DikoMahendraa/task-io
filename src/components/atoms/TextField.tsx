@@ -7,7 +7,7 @@ interface TextFieldProps {
   prefix?: string | React.ReactNode;
   suffix?: string | React.ReactNode;
   variant?: 'default' | 'prefix' | 'suffix';
-  type?: 'text' | 'password' | 'date';
+  type?: 'text' | 'password' | 'date' | 'email';
   register: any;
   error?: string;
 }

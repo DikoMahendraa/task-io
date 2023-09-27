@@ -70,6 +70,7 @@ export default function AuthRegister() {
           />
           <TextField
             label="Email"
+            type="email"
             placeholder="Ex. example@mail.com"
             register={{
               ...register('email', { required: 'email is required' })

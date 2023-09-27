@@ -4,12 +4,12 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   let cookie = request.cookies.get('access-token');
 
-  if (!cookie) {
-    return NextResponse.rewrite(new URL('/login', request.url));
-  }
-
-  if (cookie) {
-    return NextResponse.rewrite(new URL('/dashboard', request.url));
+  if (request.nextUrl.pathname.startsWith('/dashboard')) {
+    if (!!cookie) {
+      return NextResponse.rewrite(new URL(request.url, request.url));
+    } else {
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
   }
 }
 
